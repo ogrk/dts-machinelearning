@@ -15,7 +15,12 @@ def load_csv_file():
 data = load_csv_file()
 # Load the data
 #data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/clean_data.csv')
-test_data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/MOCK_DATA.csv')
+#test_data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/MOCK_DATA.csv')
+def load_csv_file():
+    return pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/MOCK_DATA.csv')
+    
+test_data = load_csv_file()
+
 X = data.drop('diabetes', axis=1)
 y = data['diabetes']
 
