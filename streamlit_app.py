@@ -39,9 +39,15 @@ with open('diabetes_model.pkl', 'wb') as file:
     pickle.dump(model_smote, file)
 
 # Load the trained model
-with open('diabetes_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
+#with open('diabetes_model.pkl', 'rb') as file:
+ #   model = pickle.load(file)
+@st.cache_resource
+def load_model():
+    # Load the model just once
+    with open('diabetes_model.pkl', 'rb') as file:
+        model = pickle.load(file)
+    return model
+model = load_model()
 # Streamlit interface
 st.title("Diabetes Prediction App")
 st.write("Enter patient details to predict diabetes status:")
