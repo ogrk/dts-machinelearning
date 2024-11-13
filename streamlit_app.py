@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title('Diabetes Prediction Ap')
+st.title('Diabetes Prediction App')
 
 st.info('This app uses a machine learning model to predict diabetes')
 
