@@ -8,8 +8,8 @@ from sklearn.metrics import classification_report
 import pickle
 import time
 # Load the data
-data = pd.read_csv('clean_data.csv')
-test_data=pd.read_csv('MOCK_DATA.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/clean_data.csv')
+test_data=pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/MOCK_DATA.csv')
 X = data.drop('diabetes', axis=1)
 y = data['diabetes']
 
