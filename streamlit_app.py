@@ -8,8 +8,13 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 import time
 
+@st.cache_data
+def load_csv_file():
+    return pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/clean_data.csv')
+    
+data = load_csv_file()
 # Load the data
-data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/clean_data.csv')
+#data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/clean_data.csv')
 test_data = pd.read_csv('https://raw.githubusercontent.com/ogrk/data/refs/heads/main/MOCK_DATA.csv')
 X = data.drop('diabetes', axis=1)
 y = data['diabetes']
